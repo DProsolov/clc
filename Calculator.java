@@ -87,7 +87,6 @@ public class Calculator {
         button7.addActionListener(ce);
         button8.addActionListener(ce);
         button9.addActionListener(ce);
-    buttonEqual.addActionListener(ce);
         buttonEqual.addActionListener(ce);
         buttonPoint.addActionListener(ce);
         buttonPlus.addActionListener(ce);

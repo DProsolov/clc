@@ -51,15 +51,22 @@ public class CalculatorEngine implements ActionListener {
                 currentResult *= dispVl;
                 parent.displayField.setText("" + currentResult);
                 System.out.println("Текущее действие=*: " + selectedAction + " " + currentResult);
-            } else if (selectedAction == '/'){
+            } else if (selectedAction == '/' && dispVl!=0){
                 currentResult /= dispVl;
                 parent.displayField.setText("" + currentResult);
+                System.out.println("Текущее действие=/: " + selectedAction + " " + currentResult);
+            } else if (selectedAction == '/' && dispVl==0){
+                parent.displayField.setText("На ноль делить нельзя!!!");
                 System.out.println("Текущее действие=/: " + selectedAction + " " + currentResult);
             }
         } else  {
             String clickedButtonLabel = clickedButton.getText();
-            parent.displayField.setText(dFT + clickedButtonLabel);
-            System.out.println("Текущее действие кн: " + dFT + " " + clickedButtonLabel);
+            if (dFT.indexOf(".")==1 && src == parent.buttonPoint) {
+                System.out.println("Точка есть!!!");
+            } else {
+                parent.displayField.setText(dFT + clickedButtonLabel);
+                System.out.println("Текущее действие кн: " + dFT + " " + clickedButtonLabel);
+            }
         }
     }
 }
